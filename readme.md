@@ -38,14 +38,15 @@ Sistem melibatkan tiga peran utama:
 - **RT/RW** mendaftar sebagai admin wilayah dan memverifikasi data warga yang masuk.
 
 ### 2. Warga Memilah Sampah
-Kategori sampah yang didukung:
-- ♻️ Plastik
-- 📦 Kertas/Kardus
-- 🥫 Logam
-- 🍾 Kaca
-- 🗑️ Residu
+Kategori sampah dibuat **sederhana, hanya 3 jenis**, supaya warga mudah memilah tanpa perlu paham detail jenis material:
+
+- 🍃 **Organik** — sisa makanan, daun, sampah dapur, dll
+- ♻️ **Anorganik** — plastik, kertas/kardus, logam, kaca, dan material lain yang masih bisa didaur ulang/dijual
+- 🗑️ **Residu** — sampah yang tidak dapat dipilah/didaur ulang (campuran, popok, styrofoam kotor, dll)
 
 Website menampilkan jenis sampah yang bisa disetor beserta estimasi nilai/poinnya.
+
+> Klasifikasi ini sengaja disederhanakan agar tidak membebani warga dengan terlalu banyak kategori — cukup pisahkan yang bisa terurai, yang bisa didaur ulang/dijual, dan sisanya.
 
 ### 3. Warga Setor Sampah
 Warga menekan **"Setor Sampah"** lalu mengisi:
@@ -56,7 +57,7 @@ Warga menekan **"Setor Sampah"** lalu mengisi:
 Sampah kemudian dibawa ke titik pengumpulan RT/RW.
 
 ### 4. Verifikasi RT/RW
-Admin RT/RW menerima pengajuan (contoh: *Afra — Plastik — 3,5 kg*), menimbang, lalu:
+Admin RT/RW menerima pengajuan (contoh: *Afra — Anorganik — 3,5 kg*), menimbang, lalu:
 - ✅ **Disetujui** → poin dihitung otomatis
 - ❌ **Ditolak / berat dikoreksi** → jika tidak sesuai
 
@@ -65,7 +66,13 @@ Admin RT/RW menerima pengajuan (contoh: *Afra — Plastik — 3,5 kg*), menimban
 ## Sistem Poin & Reward
 
 ### Poin Warga
-Contoh konversi: **1 kg plastik = 100 poin**
+Konversi poin bisa dibedakan per kategori, karena nilai jual/manfaatnya beda. Contoh:
+
+| Kategori | Konversi |
+|---|---|
+| Anorganik | 1 kg = 100 poin |
+| Organik | 1 kg = 50 poin |
+| Residu | Tidak dapat poin (atau poin minimal) |
 
 Warga dapat melihat ringkasan kontribusinya, misalnya:
 ```
